@@ -68,14 +68,15 @@ ENGINE = InnoDB;
 -- Table `attendance`.`Class_has_Student`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `attendance`.`Class_has_Student` (
+  `id` VARCHAR(45) NOT NULL COMMENT '',
   `class_id` INT NOT NULL COMMENT '',
   `stu_id` INT NOT NULL COMMENT '',
   `status_id` INT NOT NULL COMMENT '',
   `date` VARCHAR(45) NOT NULL COMMENT '',
   INDEX `fk_Class_has_Student_Student1_idx` (`stu_id` ASC)  COMMENT '',
   INDEX `fk_Class_has_Student_Class1_idx` (`class_id` ASC)  COMMENT '',
-  PRIMARY KEY (`class_id`, `stu_id`)  COMMENT '',
   INDEX `fk_Class_has_Student_statuses1_idx` (`status_id` ASC)  COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '',
   CONSTRAINT `fk_Class_has_Student_Class1`
     FOREIGN KEY (`class_id`)
     REFERENCES `attendance`.`class` (`id`)
@@ -163,26 +164,26 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `attendance`;
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (0, 1, 0, '21/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (0, 4, 0, '21/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (0, 3, 1, '21/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (0, 5, 0, '21/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (0, 7, 2, '21/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (0, 8, 0, '21/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (4, 1, 0, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (4, 3, 0, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (4, 5, 0, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (4, 4, 0, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (4, 2, 0, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (4, 6, 0, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (4, 0, 0, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (4, 7, 1, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (4, 8, 2, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (2, 1, 0, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (2, 2, 0, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (2, 3, 0, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (2, 4, 0, '22/10/2015');
-INSERT INTO `attendance`.`Class_has_Student` (`class_id`, `stu_id`, `status_id`, `date`) VALUES (2, 5, 0, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('0', 0, 1, 0, '21/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('1', 0, 4, 0, '21/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('2', 0, 3, 1, '21/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('3', 0, 5, 0, '21/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('4', 0, 7, 2, '21/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('5', 0, 8, 0, '21/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('6', 4, 1, 0, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('7', 4, 3, 0, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('8', 4, 5, 0, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('9', 4, 4, 0, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('10', 4, 2, 0, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('11', 4, 6, 0, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('12', 4, 0, 0, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('13', 4, 7, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('14', 4, 8, 2, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('15', 2, 1, 0, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('16', 2, 2, 0, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('17', 2, 3, 0, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('18', 2, 4, 0, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES ('19', 2, 5, 0, '22/10/2015');
 
 COMMIT;
 
