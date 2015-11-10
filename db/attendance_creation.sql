@@ -1,5 +1,5 @@
 -- MySQL Workbench Forward Engineering
-—clone https://github.com/rsgc-ics4u-2015/attendance.git
+—-clone https://github.com/rsgc-ics4u-2015/attendance.git
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
