@@ -1,3 +1,18 @@
+-- TO USE THIS FILE IN Cloud9
+-- Run this command inside the MySQL command line client:
+--
+-- source ~/workspace/attendance/db/attendance_creation.sql
+--
+-- Be careful! This file will DROP the existing library database.
+
+-- Drop the existing library database.
+DROP DATABASE `attendance`;
+
+-- Create a new, empty library database.
+CREATE DATABASE `attendance`;
+
+-- MySQL Workbench Forward Engineering
+-- MySQL Workbench Forward Engineering
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
