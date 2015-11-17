@@ -231,8 +231,10 @@ text-align: left;
 
 
 </div>
+
 <img src="http://i.imgur.com/JZnv2cb.jpg">
  
+
 
 
 	<div id="wrapper">
