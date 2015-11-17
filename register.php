@@ -1,4 +1,5 @@
-<!Doctype html>
+
+  <!Doctype html>
 <!--Purpose:
 	Author: Chris Molloy
 	Date: 2014 03 25
@@ -226,7 +227,7 @@ text-align: left;
 	</head>
 	<body>
 	   <div id="top">
-<h1><span style="line-height:150%;">RSGC</span><strong>Attendance</strong></h1>
+<h1><span style="line-height:150%;">RSGC</span><strong>Attendance Register</strong></h1>
 
 
 </div>
@@ -239,18 +240,18 @@ text-align: left;
 
 <div id="about">
 <br><br>
- <form action="loginHandler.php" method="post">
-    Username:&nbsp;
-    <input  type="text" name="username" value=""><br/>
-   Password:&nbsp;&nbsp;
-    <input  type="password" name="password" value=""><br/>
+  <form action="registerHandler.php" method="post">
+    Select a Username:
+    <input type="text" name="username" value=""><br/>
+    Select a Password:&nbsp;
+    <input type="password" name="password" value=""><br/>
     <br>
-    <input  class="button" type="submit" value="Login">
-     <a href="register.php" class="button">Register</a>
-  
+    <input  class="button" type="submit" value="Submit">
   </form>
 
 
 </div>
 </div></body>
 </html>
+  
+ 
