@@ -51,7 +51,7 @@
   
   ?>
   
-  <a href="login.html">Go to login page</a>
+  <a href="login.php">Go to login page</a>
 
 </body>
 </html>

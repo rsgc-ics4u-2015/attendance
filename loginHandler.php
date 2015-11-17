@@ -62,7 +62,7 @@
 
   ?>
   
-  <a href="login.html">Return to login page</a>
+  <a href="login.php">Return to login page</a>
 
 </body>
 </html>

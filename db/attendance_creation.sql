@@ -14,6 +14,7 @@ CREATE DATABASE `attendance`;
 -- MySQL Workbench Forward Engineering
 -- MySQL Workbench Forward Engineering
 -- MySQL Workbench Forward Engineering
+-- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -113,3 +114,92 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `attendance`.`teacher`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `attendance`;
+INSERT INTO `attendance`.`teacher` (`id`, `name`, `pw`) VALUES (1, 'Sanaz Ghoreshy', 'ScienceSux');
+INSERT INTO `attendance`.`teacher` (`id`, `name`, `pw`) VALUES (2, 'Gerry Doerksen', 'notsofastmuchachos');
+INSERT INTO `attendance`.`teacher` (`id`, `name`, `pw`) VALUES (3, 'Rickesh Kotecha', '123456');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `attendance`.`class`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `attendance`;
+INSERT INTO `attendance`.`class` (`id`, `teacher_id`, `code`, `day`, `period`) VALUES (1, 1, 'SCH3U-1', '1', '1');
+INSERT INTO `attendance`.`class` (`id`, `teacher_id`, `code`, `day`, `period`) VALUES (2, 3, 'BBI3M-1', '3', '4');
+INSERT INTO `attendance`.`class` (`id`, `teacher_id`, `code`, `day`, `period`) VALUES (3, 2, 'MCV4U', '2', '2');
+INSERT INTO `attendance`.`class` (`id`, `teacher_id`, `code`, `day`, `period`) VALUES (4, 1, 'SCH4UAP', '4', '3');
+INSERT INTO `attendance`.`class` (`id`, `teacher_id`, `code`, `day`, `period`) VALUES (5, 3, 'BBI3M-2', '1', '2');
+INSERT INTO `attendance`.`class` (`id`, `teacher_id`, `code`, `day`, `period`) VALUES (6, 3, 'BBI2M', '2', '1');
+INSERT INTO `attendance`.`class` (`id`, `teacher_id`, `code`, `day`, `period`) VALUES (7, 2, 'MHF4U', '4', '4');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `attendance`.`student`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `attendance`;
+INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (1, 'Jon Ser');
+INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (2, 'Chris Molloy');
+INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (3, 'Michael Wrana');
+INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (4, 'John Dunphy');
+INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (5, 'Scott Bowlby');
+INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (6, 'Jamie Linsdell');
+INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (7, 'Ross Hill');
+INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (8, 'Christien Kelly');
+INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (9, 'Graeme Edwards');
+INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (10, 'Jet Bent-Lee');
+INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (11, 'Sean Fielding');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `attendance`.`statuses`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `attendance`;
+INSERT INTO `attendance`.`statuses` (`id`, `status name`) VALUES (1, 'present');
+INSERT INTO `attendance`.`statuses` (`id`, `status name`) VALUES (2, 'absent');
+INSERT INTO `attendance`.`statuses` (`id`, `status name`) VALUES (3, 'excused');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `attendance`.`Class_has_Student`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `attendance`;
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (1, 1, 1, 1, '21/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (2, 1, 4, 1, '21/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (3, 1, 3, 2, '21/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (4, 1, 5, 1, '21/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (5, 1, 7, 3, '21/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (6, 1, 8, 1, '21/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (7, 5, 1, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (8, 5, 3, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (9, 5, 5, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (10, 5, 4, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (11, 5, 2, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (12, 5, 6, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (13, 5, 3, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (14, 5, 7, 2, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (15, 5, 8, 3, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (16, 3, 1, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (17, 3, 2, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (18, 3, 3, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (19, 3, 4, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (20, 3, 5, 1, '22/10/2015');
+
+COMMIT;
+
