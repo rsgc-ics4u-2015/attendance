@@ -35,8 +35,8 @@ USE `attendance` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `attendance`.`teacher` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
-  `name` VARCHAR(45) NOT NULL COMMENT '',
-  `pw` VARCHAR(45) NOT NULL COMMENT '',
+  `name` VARCHAR(45) NULL COMMENT '',
+  `pw` VARCHAR(45) NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
@@ -46,10 +46,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `attendance`.`class` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
-  `teacher_id` INT NOT NULL COMMENT '',
-  `code` VARCHAR(45) NOT NULL COMMENT '',
-  `day` VARCHAR(45) NOT NULL COMMENT '',
-  `period` VARCHAR(45) NOT NULL COMMENT '',
+  `teacher_id` INT NULL COMMENT '',
+  `code` VARCHAR(45) NULL COMMENT '',
+  `day` VARCHAR(45) NULL COMMENT '',
+  `period` VARCHAR(45) NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '',
   INDEX `fk_Class_Teacher_idx` (`teacher_id` ASC)  COMMENT '',
   CONSTRAINT `fk_Class_Teacher`
@@ -65,7 +65,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `attendance`.`student` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
-  `name` VARCHAR(45) NOT NULL COMMENT '',
+  `name` VARCHAR(45) NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
@@ -75,7 +75,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `attendance`.`statuses` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
-  `status name` VARCHAR(45) NOT NULL COMMENT '',
+  `status name` VARCHAR(45) NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
@@ -85,10 +85,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `attendance`.`Class_has_Student` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
-  `class_id` INT NOT NULL COMMENT '',
-  `stu_id` INT NOT NULL COMMENT '',
-  `status_id` INT NOT NULL COMMENT '',
-  `date` VARCHAR(45) NOT NULL COMMENT '',
+  `class_id` INT NULL COMMENT '',
+  `stu_id` INT NULL COMMENT '',
+  `status_id` INT NULL COMMENT '',
+  `date` VARCHAR(45) NULL COMMENT '',
   INDEX `fk_Class_has_Student_Student1_idx` (`stu_id` ASC)  COMMENT '',
   INDEX `fk_Class_has_Student_Class1_idx` (`class_id` ASC)  COMMENT '',
   INDEX `fk_Class_has_Student_statuses1_idx` (`status_id` ASC)  COMMENT '',
@@ -123,6 +123,7 @@ USE `attendance`;
 INSERT INTO `attendance`.`teacher` (`id`, `name`, `pw`) VALUES (1, 'Sanaz Ghoreshy', 'ScienceSux');
 INSERT INTO `attendance`.`teacher` (`id`, `name`, `pw`) VALUES (2, 'Gerry Doerksen', 'notsofastmuchachos');
 INSERT INTO `attendance`.`teacher` (`id`, `name`, `pw`) VALUES (3, 'Rickesh Kotecha', '123456');
+INSERT INTO `attendance`.`teacher` (`id`, `name`, `pw`) VALUES (0, NULL, NULL);
 
 COMMIT;
 
@@ -139,6 +140,7 @@ INSERT INTO `attendance`.`class` (`id`, `teacher_id`, `code`, `day`, `period`) V
 INSERT INTO `attendance`.`class` (`id`, `teacher_id`, `code`, `day`, `period`) VALUES (5, 3, 'BBI3M-2', '1', '2');
 INSERT INTO `attendance`.`class` (`id`, `teacher_id`, `code`, `day`, `period`) VALUES (6, 3, 'BBI2M', '2', '1');
 INSERT INTO `attendance`.`class` (`id`, `teacher_id`, `code`, `day`, `period`) VALUES (7, 2, 'MHF4U', '4', '4');
+INSERT INTO `attendance`.`class` (`id`, `teacher_id`, `code`, `day`, `period`) VALUES (0, 0, NULL, NULL, NULL);
 
 COMMIT;
 
@@ -159,6 +161,7 @@ INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (8, 'Christien Kelly');
 INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (9, 'Graeme Edwards');
 INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (10, 'Jet Bent-Lee');
 INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (11, 'Sean Fielding');
+INSERT INTO `attendance`.`student` (`id`, `name`) VALUES (0, NULL);
 
 COMMIT;
 
@@ -171,6 +174,7 @@ USE `attendance`;
 INSERT INTO `attendance`.`statuses` (`id`, `status name`) VALUES (1, 'present');
 INSERT INTO `attendance`.`statuses` (`id`, `status name`) VALUES (2, 'absent');
 INSERT INTO `attendance`.`statuses` (`id`, `status name`) VALUES (3, 'excused');
+INSERT INTO `attendance`.`statuses` (`id`, `status name`) VALUES (0, NULL);
 
 COMMIT;
 
@@ -200,6 +204,7 @@ INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `statu
 INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (18, 3, 3, 1, '22/10/2015');
 INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (19, 3, 4, 1, '22/10/2015');
 INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (20, 3, 5, 1, '22/10/2015');
+INSERT INTO `attendance`.`Class_has_Student` (`id`, `class_id`, `stu_id`, `status_id`, `date`) VALUES (0, NULL, NULL, NULL, NULL);
 
 COMMIT;
 
